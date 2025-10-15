@@ -12,7 +12,6 @@ export default defineConfig({
                 checker({
                         // // e.g. use TypeScript check
                         typescript: {
-                                root: "./vite.config.ts",
                                 buildMode: true,
                                 tsconfigPath: "./tsconfig.app.json",
                         },
