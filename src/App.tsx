@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Logo from "./Animations/Logo";
 import {
@@ -79,7 +79,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 function App() {
         const { mode, setMode } = useColorScheme();
         const chatContainerRef = useRef<any>(null);
-        const [todos, setTodos] = useState([{ text: "a", id: 23, completed: false }]);
+        const [todos, setTodos] = useState([
+                { text: "abhishek mangesh zambare", id: 23, completed: false },
+                { text: "dsagddgfgf thtjtrrth fdffsdf jgkuyuknhg", id: 4445, completed: false },
+                { text: "affdgd sfgfgddfd rtwrt43rw", id: 523, completed: false },
+                { text: "ajh gggdgfgfgdh hfrttertt rwrqwwqrw", id: 3442, completed: false },
+                { text: "afrgffttyr teryrytyttte wtew", id: 4342, completed: false },
+                { text: "anbb vvbvnbvxvmn vbcvbcbnbfg gdfgfdgfdhhhhf", id: 3432, completed: false },
+                { text: "aea sdctrgvhgbn mkoidfdsfdfdffsdf", id: 234343, completed: false },
+        ]);
         const [newTodo, setNewTodo] = useState("");
         // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -126,6 +134,11 @@ function App() {
                 );
                 setNewTodo("");
         };
+
+        useEffect(() => {
+                setMode("light");
+        }, []);
+
         return (
                 <Container>
                         <Stack
@@ -183,7 +196,7 @@ function App() {
                                                         <Stack
                                                                 direction={"column"}
                                                                 ref={chatContainerRef}
-                                                                height={"330px"}
+                                                                height={"calc(100vh - 300px)"}
                                                                 width={"900px"}
                                                                 overflow={"auto"}
                                                                 p={5}
@@ -323,7 +336,6 @@ function App() {
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <MaterialUISwitch
                                                         sx={{ m: 1 }}
-                                                        defaultChecked
                                                         value={mode}
                                                         onChange={() =>
                                                                 setMode(
