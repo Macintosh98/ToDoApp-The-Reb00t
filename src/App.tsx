@@ -142,31 +142,33 @@ function App() {
         return (
                 <Container>
                         <Stack
+                                direction={"column"}
                                 sx={{
+                                        justifyContent: "space-between",
+                                        alignItems: "center",
                                         overflow: "none",
                                         height: "100vh",
                                 }}
-                                direction={"column"}
-                                justifyContent={"space-between"}
-                                alignItems={"center"}
                         >
                                 <Stack
+                                        direction={"column"}
                                         sx={{
+                                                justifyContent: "center",
+                                                alignItems: "center",
                                                 overflow: "none",
                                                 width: "100%",
                                         }}
-                                        direction={"column"}
-                                        justifyContent={"center"}
-                                        alignItems={"center"}
                                 >
                                         <MousePointer />
                                         <InIt>
                                                 <Stack
                                                         direction={"row"}
-                                                        justifyContent={"center"}
-                                                        m={4}
-                                                        alignItems={"center"}
                                                         spacing={2}
+                                                        sx={{
+                                                                justifyContent: "center",
+                                                                m: 4,
+                                                                alignItems: "center",
+                                                        }}
                                                 >
                                                         <Logo />
                                                         <Typography
@@ -196,11 +198,13 @@ function App() {
                                                         <Stack
                                                                 direction={"column"}
                                                                 ref={chatContainerRef}
-                                                                height={"calc(100vh - 300px)"}
-                                                                width={"900px"}
-                                                                overflow={"auto"}
-                                                                p={5}
                                                                 spacing={2}
+                                                                sx={{
+                                                                        height: "calc(100vh - 300px)",
+                                                                        width: "900px",
+                                                                        overflow: "auto",
+                                                                        p: 5,
+                                                                }}
                                                         >
                                                                 {todos.map((todo) => (
                                                                         <BoxAnimation
@@ -217,13 +221,12 @@ function App() {
                                                                                         direction={
                                                                                                 "row"
                                                                                         }
-                                                                                        alignItems={
-                                                                                                "center"
-                                                                                        }
-                                                                                        justifyContent={
-                                                                                                "space-between"
-                                                                                        }
                                                                                         spacing={4}
+                                                                                        sx={{
+                                                                                                alignItems: "center",
+                                                                                                justifyContent:
+                                                                                                        "space-between",
+                                                                                        }}
                                                                                 >
                                                                                         {todo.text ===
                                                                                         "" ? (
@@ -255,10 +258,10 @@ function App() {
                                                                                                                 )
                                                                                                         }
                                                                                                         noWrap
-                                                                                                        textTransform={
-                                                                                                                "capitalize"
-                                                                                                        }
                                                                                                         sx={{
+                                                                                                                textTransform:
+                                                                                                                        "capitalize",
+
                                                                                                                 color: todo.completed
                                                                                                                         ? "error.main"
                                                                                                                         : "success.main",
@@ -329,7 +332,13 @@ function App() {
                                         </InIt>
                                 </Stack>
                                 <InIt>
-                                        <Typography variant="h5" m={2} color="text.secondary">
+                                        <Typography
+                                                variant="h5"
+                                                sx={{
+                                                        m: 2,
+                                                        color: "text.secondary",
+                                                }}
+                                        >
                                                 Copyright@10/2025
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
