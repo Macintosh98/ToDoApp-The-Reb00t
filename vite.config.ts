@@ -22,10 +22,6 @@ export default defineConfig({
                                 lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
                         },
                 }),
-                react({
-                        babel: {
-                                plugins: [["babel-plugin-react-compiler"]],
-                        },
-                }),
+                react(),
         ],
 });
